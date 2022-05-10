@@ -1,0 +1,7 @@
+{% macro display_movie_colletion(collection) %}
+
+{% for item in collection %}
+<div class="movie">{{ item.title }}</div>
+{% endfor %}
+
+{% endmacro %}

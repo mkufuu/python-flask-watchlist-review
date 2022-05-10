@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Watchlist</title>
+    </head>
+
+    {% import 'macros.html' as macros %}
+
+    <body>
+        <main id="latest-movies">
+            <h1>THE LATEST MOVIES</h1>
+            <!-- show popular movies -->
+            {{ macros.display_movie_colletion(latest_movies) }}
+        </main>
+
+        <section id="popular-movies">
+            <h1>THE MOST POPULAR MOVIES</h1>
+            <!-- show popular movies -->
+            {{ macros.display_movie_colletion(popular_movies) }}
+        </section>
+    </body>
+
+</html>

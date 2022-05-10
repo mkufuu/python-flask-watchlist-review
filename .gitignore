@@ -1,0 +1,19 @@
+# directories
+**/__pycache__/
+
+# flask private instance
+instance/
+
+# vscode
+.vscode/
+
+# pycharm
+.idea/
+
+# virtual environment
+venv/
+virtual/
+
+# files
+*.pyc
+start.sh
