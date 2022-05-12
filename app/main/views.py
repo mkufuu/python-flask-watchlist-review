@@ -1,8 +1,8 @@
 from flask import render_template
-from .request import get_movies
-from app import app
+from ..requests import get_movies
+from . import main
 
-@app.route('/')
+@main.route('/')
 def index():
     '''
     View root page function that returns the index page and its data
@@ -14,6 +14,6 @@ def index():
 
     return render_template('index.html', latest_movies = latest_movies, popular_movies = popular_movies)
 
-@app.route('/reviews')
+@main.route('/reviews')
 def reviews():
     return render_template('reviews.html')
