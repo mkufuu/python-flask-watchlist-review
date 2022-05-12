@@ -1,7 +1,27 @@
 {% macro display_movie_colletion(collection) %}
 
-{% for item in collection %}
-<div class="movie">{{ item.title }}</div>
-{% endfor %}
+<div class="container-fluid">
+    <div class="row">
+        {% for item in collection %}
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <!-- title -->
+                    <h3>{{ item.title }}</h3>
+                </div>
+
+                <div class="panel-body zero-padding">
+                    <!-- poster -->
+                    <img src={{ item.poster }} class="img-responsive" alt={{ item.title }} />
+                </div>
+
+                <div class="panel-footer">
+                    {{ item.overview }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 {% endmacro %}

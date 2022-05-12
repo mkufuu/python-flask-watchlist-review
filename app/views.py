@@ -13,3 +13,7 @@ def index():
     popular_movies = get_movies('popular')
 
     return render_template('index.html', latest_movies = latest_movies, popular_movies = popular_movies)
+
+@app.route('/reviews')
+def reviews():
+    return render_template('reviews.html')

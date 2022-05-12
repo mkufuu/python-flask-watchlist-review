@@ -1,27 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Watchlist</title>
-    </head>
+{% import 'macros.html' as macros %}
 
-    {% import 'macros.html' as macros %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}" />
+{% endblock %}
 
-    <body>
-        <main id="latest-movies">
-            <h1>THE LATEST MOVIES</h1>
-            <!-- show popular movies -->
-            {{ macros.display_movie_colletion(latest_movies) }}
-        </main>
+{% block content %}
 
-        <section id="popular-movies">
-            <h1>THE MOST POPULAR MOVIES</h1>
-            <!-- show popular movies -->
-            {{ macros.display_movie_colletion(popular_movies) }}
-        </section>
-    </body>
+<header id="home-banner" style="background-image: url('/static/img/home-banner.jpg')">
 
-</html>
+</header>
+
+<main id=" latest-movies">
+    <div class="d-flex align-item justify-content-center">
+        <i class="bi bi-stars icon-large"></i>
+        <h1 class="title-font">THE LATEST MOVIES</h1>
+    </div>
+    <!-- show popular movies -->
+    {{ macros.display_movie_colletion(latest_movies) }}
+</main>
+
+<section id="popular-movies">
+    <div class="d-flex align-item justify-content-center">
+        <i class="bi bi-stars icon-large"></i>
+        <h1 class="title-font">THE MOST POPULAR MOVIES</h1>
+    </div>
+    <!-- show popular movies -->
+    {{ macros.display_movie_colletion(popular_movies) }}
+</section>
+{% endblock %}
